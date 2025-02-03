@@ -1,0 +1,120 @@
+<!-- API's USED -->
+
+<!-- OpenStreetMap (OSM) Tile Layer -->
+<!-- Purpose: Provides the map tiles that are displayed on the Leaflet map. -->
+<!-- API Usage: You are using OpenStreetMap's free map tile service to render map tiles 
+(the map's background). -->
+<!-- This service gives us the background map to display the user's location and search results. -->
+
+<!-- OpenStreetMap's Nominatim API (Reverse Geocoding) -->
+<!-- Purpose: This API is used to perform reverse geocoding (i.e., converting latitude and longitude coordinates into a human-readable address or location name). -->
+<!-- API Usage: When you retrieve the user's location, the Nominatim API is used to reverse geocode the coordinates into a location name 
+(like a city or neighborhood). -->
+<!-- This helps us display location names for user coordinates (latitude and longitude) when necessary. -->
+
+<!-- Geolocation API (Browser API) -->
+<!-- Purpose: This is a built-in API in most modern web browsers that provides the user's current geographical location (latitude and longitude). -->
+<!-- API Usage: The Geolocation API is used to get the user's current latitude and longitude coordinates to set the map view and add a marker at that location. -->
+<!-- This allows us to pinpoint the user's current position on the map. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Character encoding and viewport setup for mobile responsiveness -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicon: Displays a small image in the browser tab -->
+  <link rel="icon" type="image/x-icon" href="https://cdn0.iconfinder.com/data/icons/tuts/256/maps.png">
+
+  <!-- Title of the webpage, which appears on the browser tab -->
+  <title>See Your Current Location !</title>
+
+  <!-- Leaflet CSS for styling the map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- External CSS for custom styling of the page -->
+  <link rel="stylesheet" href="2ndPagestyles.css" />
+</head>
+<body>
+
+  <!-- Button for Help Service -->
+  <a href="index.html" class="helpservice-btn">
+    <img src="https://cdn-icons-png.flaticon.com/512/1946/1946433.png"  style="width: 20px; height: 20px; margin-right: 8px; vertical-align: middle;"/> Back 
+  </a>
+
+  
+
+  
+  <!-- Creates a clickable " Back " button that links to the index.html page -->
+
+  <style>
+    /* Style for Help Service Button */
+    .helpservice-btn {
+      position: absolute;                              /* Positions the button relative to its closest positioned ancestor or the page */
+      top: 35px;                                      /* Moves the button 30px from the top of the page */
+      left: 5rem;                                    /* Moves the button 5rem from the left side of the page */
+      background-color: #01a1b6c9;                /* Sets the button's background color */
+      color: rgb(255, 255, 255);                 /* Sets the button's text color to white */
+      padding: 10px 20px;                         /* Adds 10px vertical and 20px horizontal padding inside the button */
+      border-radius: 25px;                       /* Rounds the corners of the button to make it pill-shaped */
+      text-decoration: none !important;         /* Ensures there is no underline on the button text */
+      font-size: 1rem;                         /* Sets the font size of the button text to 1 rem */
+      font-weight: bold;                      /* Makes the button text bold */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Sets a modern sans-serif font for the button text */
+      margin-left: 7rem;                       /* Adds extra spacing to the left of the button */
+      transition: all 0.3s ease-in-out;        /* Smooth transition for hover effects */
+    }
+
+    /* Hover effect for the " Back " Button */
+    .helpservice-btn:hover {
+      background-color: #00b7ffb4;              /* Changes the button's background color when hovered */
+      color: rgb(255, 255, 255);               /* Changes the text color to white when hovered */
+      transform: scale(1.05);                   /* Slightly enlarges the button on hover */
+    }
+
+    /* Focus effect for the Help Service Button */
+    .helpservice-btn:focus {
+      outline: none;                                     /* Removes the default outline */
+      box-shadow: 0 0 5px rgba(211, 207, 7, 0.829);   /* Adds a custom focus shadow */
+    }
+  </style>
+
+    
+  <!-- Creates a clickable " Back " button that links to the index.html page -->
+
+
+  
+  <!-- Main Title -->
+  <h1>Location Finder & Checker -<br> Find Your Current Location</h1>
+
+  <!-- Location Search Box and Search Button -->
+  <div style="margin: 10px;">
+    <input
+      type="text"
+      id="location-search"
+      placeholder="Enter a location"
+      style="padding: 10px; width: 300px; font-size: 16px; border-radius: 25px;" />
+    <!-- Input field for the user to enter a location -->
+    
+    <button
+      id="search-button"
+      style="padding: 10px; font-size: 16px; background-color: #08aad3c9; color: white; border: none; cursor: pointer; border-radius: 25px; text-shadow: 0 0 30px #000000;">
+      Search
+    </button>
+    <!-- Button that triggers the search action -->
+  </div>
+
+  <!-- Map Display Section -->
+  <!-- DONT REMOVE THIS IS IMPORTANT TO DISPLAY THE MAP -->
+  <div id="map"></div>
+  <!-- DONT REMOVE THIS IS IMPORTANT TO DISPLAY THE MAP -->
+
+  <!-- Leaflet JavaScript library (used for rendering the map) -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <!-- External JavaScript file that contains custom logic for map coordinates and other functionalities -->
+  <script src=" 2ndPageMapCoordinates.js"></script>
+
+</body>
+</html>

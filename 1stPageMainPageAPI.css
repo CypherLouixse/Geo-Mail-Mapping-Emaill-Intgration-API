@@ -1,0 +1,721 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300&display=swap');
+
+:root {
+  --pink: #EE0548;
+  --black: #000000;
+  --green: #8aff03; /* Changed to light blue */
+  --blue: #0000FF;
+  --lightblue: #23E4D2; /* Light blue color */
+  --white: #FFFFFF;
+  --red: #f70122e3;
+  --Bluish: #10e9cccc;
+}
+
+/* Global styles applied to all elements */
+* {
+  font-family: 'Roboto', sans-serif; /* Sets the font family for all text to 'Roboto' with a fallback to sans-serif. */
+  margin: 0; padding: 0; /* Removes default margin and padding for a clean layout. */
+  box-sizing: border-box; /* Includes padding and border within the element's total width and height. */
+  text-decoration: none; /* Removes underline styling from links. */
+  outline: none; border: none; /* Removes focus outline and border for a cleaner appearance. */
+  transition: .2s linear; /* Adds smooth transitions to elements for interactive effects. */
+  text-transform: capitalize; /* Ensures the first letter of each word is capitalized. */
+}
+
+/* Styling for selected text */
+*::selection {
+  background: var(--blue); /* Changes the background color of selected text. */
+  color: #fff; /* Sets the text color of selected text to white. */
+}
+
+
+
+/*THIS CSS STYLES LINE OF CODE IS USED TO MAKE YOUR WEBPAGE ABLE TO 
+UP AND DOWN FREELY AND SMOOTHLY*/
+
+/* Base styling for the html element */
+html {
+  font-size: 62.5%; /* Sets the font size to 62.5%, making 1rem equal to 10px for easier calculations. */
+  overflow-x: hidden; /* Prevents horizontal scrolling due to overflowing content. */
+  scroll-padding-top: 6.5rem; /* Adds spacing at the top when scrolling to anchor points. */
+  scroll-behavior: smooth; /* Enables smooth scrolling for anchor links. */
+}
+
+/*THIS CSS STYLES LINE OF CODE IS USED TO MAKE YOUR WEBPAGE ABLE TO 
+UP AND DOWN FREELY AND SMOOTHLY*/
+
+
+
+/* Styling for the body element */
+body {
+  background-image: url(https://images.unsplash.com/photo-1609452231874-b4b533467947?q=80&w=1508&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D); 
+  /* Adds a high-quality background image for the page. */
+}
+
+/* Styling for all section elements */
+section {
+  padding: 3rem 9%; /* Adds vertical and horizontal padding to sections for better spacing. */
+}
+
+
+/*VISIT BUTTON CSS DESIGN*/
+/* Base button styles */
+
+ 
+.btn {
+  display: inline-block;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 1rem;
+  border: 0.2rem solid var(--lightblue); /* Use light blue for the border */
+  background: #333; /* Default background color */
+  color: var(--lightblue); /* Default text color is light blue */
+  font-size: 1.7rem;
+  padding: 0.8rem 3rem;
+  cursor: pointer;
+  border-radius: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  position: relative; /* Stabilize layout */
+}
+
+/* Hover effect */
+.btn:hover {
+  background: var(--lightblue); /* Change background color on hover to light blue */
+  color: #000; /* Change text color on hover */
+  box-shadow: 0 0 10px var(--lightblue), 0 0 20px var(--lightblue); /* Glow effect with light blue */
+  transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+/* Add a pseudo-element to handle hover background */
+.btn:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--lightblue); /* Light blue background */
+  border-radius: 20px;
+  z-index: -1; /* Keep it behind the button text */
+  opacity: 0; /* Initially invisible */
+  transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+/* Show pseudo-element background on hover */
+.btn:hover:before {
+  opacity: 1; /* Make the background visible */
+}
+
+/* Responsive button styles */
+@media (max-width: 768px) {
+  .btn {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+    padding: 0.6rem 2rem; /* Adjust padding for smaller screens */
+    width: 100%; /* Full-width button for smaller screens */
+    max-width: 300px; /* Set a max width */
+    margin: 10px auto; /* Center-align button */
+  }
+}
+
+
+
+/* VISIT BUTTON CSS DESIGN */
+
+/* First button (first-child) hover effect */
+.btn:first-child:hover {
+  /* Creating a linear gradient background on hover that transitions between multiple light shades */
+  background: linear-gradient(
+    90deg, /* Gradient direction is 90 degrees (horizontal) */
+    rgba(255, 255, 255, 0.3),             /* White with 30% opacity */
+    rgba(200, 200, 200, 0.3),            /* Light grey with 30% opacity */
+    rgba(180, 180, 180, 0.3),           /* Slightly darker grey with 30% opacity */
+    rgba(255, 255, 255, 0.3)           /* White again to create a smooth transition */
+  );
+  background-size: 400%; /* Ensures the gradient stretches across the button, creating an animated effect */
+}
+
+/* Last button (last-child) hover effect */
+.btn:last-child:hover {
+  /* Creating a linear gradient similar to the first button but with a slightly different color scheme */
+  background: linear-gradient(
+    90deg, /* Gradient direction is 90 degrees (horizontal) */
+    rgba(255, 255, 255, 0.3),            /* White with 30% opacity */
+    rgba(210, 210, 210, 0.3),           /* Slightly lighter grey with 30% opacity */
+    rgba(190, 190, 190, 0.3),          /* Light grey with 30% opacity */
+    rgba(255, 255, 255, 0.3)          /* White again to complete the transition */
+  );
+  background-size: 400%; /* Gradient stretched to cover the entire button */
+}
+
+/* Adding a pseudo-element to buttons to create a glow effect */
+.btn:first-child:before,
+.btn:last-child:before {
+  content: '';                                  /* Creates an empty pseudo-element */
+  position: absolute;                          /* Positions it absolutely within the button */
+  background: inherit;                        /* Inherits the background of the button (gradient) */
+  top: -4px; right: -4px; bottom: -4px; left: -4px; /* Extends the pseudo-element beyond the button’s borders */
+  border-radius: 50px;                      /* Rounds the corners to match the button's style */
+  filter: blur(10px);                      /* Applies a blur effect to create a glow */
+  opacity: 0;                             /* Starts with 0 opacity, making the glow invisible */
+  transition: opacity 0.5s;              /* Smooth transition for opacity change */
+}
+
+/* On hover, make the glow visible */
+.btn:first-child:hover:before,
+.btn:last-child:hover:before {
+  opacity: 0.5;                      /* Sets the glow to 50% opacity for a softer effect */
+  z-index: -1;                      /* Keeps the glow element behind the button */
+}
+
+/* Adding a subtle glow animation when the button is hovered */
+.btn:hover {
+  z-index: 1; /* Brings the button on top of other elements */
+  animation: subtleGlow 7s linear infinite; /* Applies the subtleGlow animation */
+}
+
+/* Keyframes for the subtle glow effect */
+@keyframes subtleGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 0 20px rgba(200, 200, 200, 0.2); /* Light glow at the start */
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(200, 200, 200, 0.2), 0 0 30px rgba(255, 255, 255, 0.2); /* Stronger glow in the middle */
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 0 20px rgba(180, 180, 180, 0.2); /* Ends with a soft glow */
+  }
+}
+
+/* Keyframes for a glowing background effect */
+@keyframes glow {
+  0% {
+    background-position: 0%; /* Starts the background gradient at the left */
+  }
+  100% {
+    background-position: 400%; /* Moves the gradient to the right to create an animated effect */
+  }
+}
+
+/* Styling for the heading section */
+.heading {
+  padding-bottom: 2rem; /* Adds spacing at the bottom of the heading */
+  text-align: center; /* Centers the text horizontally */
+}
+
+/* Styling for the heading text (h1) */
+.heading h1 {
+  background-color: (); /* This line is incomplete - needs a background color */
+  font-size: 4rem; /* Sets a large font size */
+  color: white; /* White text color */
+  text-shadow: 0 0 20px #000000; /*Shadow Design behind the text*/
+  padding-bottom: 1rem; /* Adds spacing below the heading */
+  text-transform: uppercase; /* Transforms text to uppercase */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Sets the font family */
+}
+
+/* Styling for the header section */
+header {
+  position: fixed; /* Fixes the header at the top of the page */
+  top: 0; left: 0; right: 0; /* Stretches the header across the top */
+  z-index: 10000; /* Makes sure the header stays on top of other content */
+  padding: .1rem 9%; /* Adds padding to the header */
+  display: flex; /* Uses flexbox to align elements */
+  align-items: center; /* Vertically centers the content */
+  justify-content: space-between; /* Distributes space between the elements */
+  border-radius: 25px; /* Rounds the corners */
+  margin-top: 2rem; /* Adds space at the top */
+  margin-left: 2rem; margin-right: 2rem; /* Adds margins on both sides */
+}
+
+/* Styling for the logo inside the header */
+header .logo {
+  font-size: 2.5rem; /* Sets a larger font size for the logo */
+  color: #fff; /* White logo color */
+  font-weight: bolder; /* Makes the logo text bold */
+  margin-right: 30rem; /* Adds a large margin on the right */
+  font-family: monospace; /* Uses a monospace font for the logo */
+}
+
+
+
+
+
+header .navbar {
+  display: flex;
+  justify-content: center; /* Centers the navigation links */
+  gap: 2rem; /* Adds spacing between the links */
+  padding: 1rem; /* Optional: adds padding around the navbar */
+  padding-right: 20px; /*Adds adding on the right side of the background-color*/
+  padding-left: 20px; /*Adds adding on the left side of the background-color*/
+  background-color: #ffffff56; /* Optional: dark background for the navbar */
+  border-radius: 20px; /*Rounds the four side corners of the background-color*/
+  
+}
+
+header .navbar a {
+  color: #fff;
+  font-weight: bolder;
+  font-size: 18px;
+  text-shadow: 0 0 20px #000000; /*Shadow Design behind the text*/
+  margin-left: 10px;
+  font-family: monospace;
+  text-decoration: none; /* Ensures no underline on links */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+header .navbar a:hover {
+  color: var(--lightblue); /* Changes color on hover */
+}
+
+
+
+
+/* Styling for images inside the .image class */
+.image img {
+  width: auto; /* Automatically adjusts the width based on the aspect ratio. */
+  height: 5rem; /* Sets a fixed height for the image. */
+  margin-left: -2rem; /* Adjusts the horizontal position of the image by shifting it to the left. */
+}
+
+/* Styling for the menu bar icon */
+#menu-bar {
+  font-size: 3rem; /* Sets a large font size for the menu icon. */
+  color: #fff; /* Sets the text color to white for contrast. */
+  border-radius: .5rem; /* Slightly rounds the corners of the menu bar container. */
+  border: .1rem solid #000000; /* Adds a thin black border around the menu bar. */
+  padding: .5rem 1.5rem; /* Adds inner spacing around the content of the menu bar. */
+  cursor: pointer; /* Changes the cursor to a pointer to indicate interactivity. */
+  display: none; /* Hides the menu bar by default; typically revealed with media queries. */
+}
+
+/* Styling for the home section */
+.home {
+  min-height: 100vh; /* Ensures the section takes up the full viewport height. */
+  display: flex; /* Uses a flexbox layout to align content within the section. */
+  align-items: center; /* Vertically centers the content within the section. */
+  background: url(https://images.unsplash.com/photo-1486976862325-fbac7b41739b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat; 
+   /* Extra HD Image link: https://images.unsplash.com/photo-1609452328629-83e46f607f2c?q=80&w=1372&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D */
+   /* Sets a background image and prevents it from repeating. */
+  background-size: cover; /* Ensures the background image covers the entire section. */
+  background-position: center; /* Centers the background image within the section. */
+  background-attachment: fixed; /* Fixes the background image in place during scrolling. */
+}
+
+/* Styling for the span text inside the home section's content */
+.home .content span {
+  font-size: 3rem; /* Sets a large font size for the span text. */
+  color: rgb(255, 255, 255); /* Makes the text color white for visibility against the background. */
+  font-family:cursive;
+  /* Sets a modern, clean font family for the span text. */
+}
+
+/* Styling for the h3 text inside the home section's content */
+.home .content h3 {
+  font-size: 6rem; /* Sets an extra-large font size for emphasis. */
+  color: rgb(255, 255, 255); /* Makes the text color white for contrast against the background. */
+  width: 60rem; /* Restricts the width of the heading for better readability. */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  /* Applies a professional, readable font family for the heading. */
+  text-shadow: 0 0 30px #000000; /* Adds a glowing shadow effect behind the text. */
+}
+
+
+ 
+ 
+ 
+
+
+
+
+
+/*DESIGN FOR VENDOR BOXES ON - WHERE TO FIND YOURSELF VENDOR*/
+
+/* Container for vendor boxes */
+.vendor .box-container {
+  display: flex; /* Enables a flexbox layout for the container. */
+  align-items: center; /* Vertically centers the content within each box. */
+  justify-content: center; /* Horizontally centers the content within the container. */
+  flex-wrap: wrap; /* Ensures boxes wrap onto new lines if they exceed the container width. */
+}
+
+/* Individual vendor box styling */
+.vendor .box-container .box {
+  flex: 1 1 30rem; /* Sets the flex-grow, flex-shrink, and base width for the box. */
+  margin: 1rem; /* Adds spacing between boxes. */
+  overflow: hidden; /* Ensures content inside the box does not overflow. */
+  position: relative; /* Establishes a relative positioning context for child elements. */
+  border-radius: .5rem; /* Rounds the corners of the box slightly. */
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .9); /* Adds a shadow for depth effect. */
+  height: 25rem; /* Sets a fixed height for the box. */
+  cursor: pointer; /* Changes the cursor to a pointer to indicate the box is interactive. */
+}
+
+/* Styling for images inside vendor infoboxes */
+.vendor .box-container .box img {
+  height: 100%; /* Ensures the image spans the full height of the box. */
+  width: 100%; /* Ensures the image spans the full width of the box. */
+  object-fit: cover; /* Ensures the image covers the box without distortion. */
+}
+
+/* Info section styling inside vendor boxes */
+.vendor .box-container .box .info {
+  display: flex; /* Uses flexbox layout for the info section content. */
+  flex-flow: column; /* Aligns content vertically within the info section. */
+  align-items: center; /* Centers content horizontally. */
+  justify-content: center; /* Centers content vertically. */
+  position: absolute; /* Positions the info section relative to its box. */
+  top: 0; /* Aligns the info section to the top of the box. */
+  left: 0; /* Aligns the info section to the left of the box. */
+  height: 100%; /* Makes the info section cover the full height of the box. */
+  width: 100%; /* Makes the info section cover the full width of the box. */
+  background: rgba(255, 255, 255, .8); /* Adds a semi-transparent white background. */
+  text-align: center; /* Centers text horizontally. */
+  transform: scale(1.3); /* Initially scales the info section up - "MAP LOCATION" & "HELP SERVICE". */
+  opacity: 0; /* Initially hides the info section. */
+}
+
+/* Hover effect for vendor boxes */
+.vendor .box-container .box:hover .info {
+  transform: scale(1); /* Resets the scale of the info section to its original size. */
+  opacity: 1; /* Makes the info section visible on hover. */
+}
+
+/* Hover effect for images in vendor boxes */
+.vendor .box-container .box:hover img {
+  transform: scale(1.3); /* Scales the image up slightly for a zoom effect on hover. */
+}
+
+/* Styling for headings (h3) inside the info section */
+.vendor .box-container .box .info h3 {
+  font-size: 4rem; /* Sets a large font size for the heading text. */
+  color: rgba(0, 0, 0, 0.795); /* Sets the text color to a semi-dark shade. */
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; /* Uses a bold, sans-serif font for emphasis. */
+}
+
+/* Styling for paragraphs (p) inside the info section */
+.vendor .box-container .box .info p {
+  font-size: 1.7rem; /* Sets a medium font size for the paragraph text. */
+  color: black; /* Sets the text color to black. */
+  padding: 1rem; /* Adds spacing around the text. */
+  font-family: Verdana, Geneva, Tahoma, sans-serif; /* Uses a clean, sans-serif font for readability. */
+}
+
+/*DESIGN FOR VENDOR BOXES ON - WHERE TO FIND YOURSELF VENDOR*/
+
+
+
+
+
+
+/*DESIGN FOR - WHERE TO FIND YOURSELF SECTION */
+
+/* Styles for the clients section row container */
+.clients .row {
+  display: flex; /* Enables a flexbox layout for arranging child elements in a row. */
+}
+
+/* Styles for the divider element inside the clients row */
+.clients .row .divider {
+  padding: 0 1rem; /* Adds horizontal spacing around the divider. */
+}
+
+/* Styles for images inside the box in the clients section */
+.clients .row .box-container .box img {
+  height: 30rem; /* Sets a fixed height for the images. */
+  width: 100%; /* Ensures the images span the full width of their container. */
+  object-fit: cover; /* Ensures the images fill their container without distortion. */
+  border-radius: .5rem; /* Rounds the corners of the images slightly. */
+  border: 2rem solid rgba(0, 0, 0, 0.842); /* Adds a thick, semi-transparent border around the images. */
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.918); /* Adds a shadow effect for depth. */
+}
+
+/* Styles for the info container inside the clients' box */
+.clients .row .box-container .box .info {
+  padding: 2rem 0; /* Adds vertical spacing inside the info container. */
+}
+
+/* Styles for headings (h3) inside the info container */
+.clients .row .box-container .box .info h3 {
+  font-size: 2.5rem; /* Sets a large font size for the heading text. */
+  font-family: Verdana, Geneva, Tahoma, sans-serif; /* Uses a clean, sans-serif font for readability. */
+  color: #fff; /* Sets the heading text color to white. */
+  background-color: rgba(0, 0, 0, 0.74); /* Adds a semi-transparent black background behind the heading. */
+  border-radius: 20px; /* Rounds the corners of the heading background. */
+  text-align: center; /* Centers the heading text. */
+  padding-top: 10px; /* Adds spacing at the top of the heading. */
+  padding-bottom: 10px; /* Adds spacing at the bottom of the heading. */
+  padding-left: 10px; /* Adds spacing on the left side of the heading. */
+  padding-right: 10px; /* Adds spacing on the right side of the heading. */
+}
+
+ /*DESIGN FOR - WHERE TO FIND YOURSELF SECTION */
+
+
+
+
+
+
+/* Styles for the team section container */
+.team .box-container {
+  display: flex; /* Enables a flexbox layout for arranging child elements. */
+  align-items: center; /* Vertically aligns items to the center within the container. */
+  justify-content: center; /* Horizontally centers the items within the container. */
+  flex-wrap: wrap; /* Allows the items to wrap onto the next line if needed. */
+}
+
+/* Styles for individual boxes in the team section */
+.team .box-container .box {
+  margin: 1rem; /* Adds spacing around each box. */
+  border-radius: .5rem; /* Rounds the corners of the box slightly. */
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .9); /* Adds a shadow effect to the box for depth. */
+  background: hsla(0, 0%, 7%, 0.712); /* Sets a dark semi-transparent background color. */
+  padding: 4.7rem 2rem; /* Adds space inside the box for content. */
+  text-align: center; /* Centers the text and content inside the box. */
+  background-size: cover; /* Ensures the background image (if applied) covers the box completely. */
+  flex: 1 1 33rem; /* Allows the box to grow, shrink, and have a base width of 33rem. */
+}
+
+/* Styles for images inside the team boxes */
+.team .box-container .box img {
+  border-radius: 50%; /* Makes the image circular. */
+  object-fit: cover; /* Ensures the image fills its container while maintaining aspect ratio. */
+  height: 15rem; /* Sets a fixed height for the image. */
+  width: 15rem; /* Sets a fixed width for the image. */
+  padding: 1rem; /* Adds space inside the image's boundary. */
+}
+
+/* Styles for the title (h3) inside the team boxes */
+.team .box-container .box h3 {
+  font-size: 2.5rem; /* Sets a large font size for the title. */
+  color: var(--white); /* Uses the black color variable for the title text. */
+  font-weight: bolder; /* Makes the title text bold. */
+}
+
+/* Styles for the subtitle (span) inside the team boxes */
+.team .box-container .box span {
+  font-size: 2rem; /* Sets a medium font size for the subtitle. */
+  color: var(--red); /* Uses the red color variable for the subtitle text. */
+  font-weight: bolder; /* Makes the subtitle text bold. */
+}
+
+/* Styles for paragraphs (p) inside the team boxes */
+.team .box-container .box p {
+  font-size: 1.5rem; /* Sets a smaller font size for the paragraph text. */
+  color: #333; /* Sets the text color to a dark gray. */
+  padding: 1rem 0; /* Adds vertical spacing around the paragraph. */
+}
+
+/* Styles for the share container inside the team boxes */
+.team .box-container .box .share {
+  padding: 1rem 0; /* Adds vertical spacing around the share section. */
+}
+
+/* Styles for images inside the share section */
+.team .box-container .box .share img {
+  width: 7rem; /* Sets a fixed width for the share icons. */
+  height: 7rem; /* Sets a fixed height for the share icons. */
+}
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+/* Styles for the heading section with an image */
+.heading1 img {
+  width: auto; /* Ensures the image width adjusts automatically based on its aspect ratio. */
+  height: 6rem; /* Sets a fixed height for the image. */
+  margin-left: -90rem; /* Moves the image far to the left, likely for positioning purposes. */
+  margin-top: -60rem; /* Moves the image far upward. */
+  margin-bottom: 15px; /* Adds a small space below the image. */
+}
+
+/* Styles for the heading section */
+.heading1 {
+  padding-bottom: 2rem; /* Adds space below the heading section. */
+  text-align: center; /* Centers the content within the heading section. */
+}
+
+/* Styles for the main heading (h1) inside the heading section */
+.heading1 h1 {
+  font-size: 4rem; /* Sets a large font size for the main heading. */
+  color: rgb(247, 229, 225); /* Gives the text a light pinkish color. */
+  padding-bottom: 1rem; /* Adds space below the heading. */
+  text-transform: uppercase; /* Converts all heading text to uppercase. */
+  font-family: Verdana, Geneva, Tahoma, sans-serif; /* Sets a sans-serif font stack for the text. */
+  background-color: rgba(27, 27, 27, 0.575); /* Adds a semi-transparent dark background behind the text. */
+}
+
+
+ 
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+/* Media Queries */
+/* These media queries adjust the layout and styles for various screen sizes to ensure a responsive design. */
+
+@media (max-width: 1200px) {
+  /* For screens with a maximum width of 1200px */
+  html {
+    font-size: 55%; /* Reduces the base font size to make text and elements smaller for medium-sized screens. */
+  }
+}
+
+@media (max-width: 991px) {
+  /* For screens with a maximum width of 991px */
+  header {
+    padding: 2rem 4%; /* Reduces padding around the header for smaller screens. */
+  }
+
+  section {
+    padding: 3rem 4%; /* Reduces padding around sections to save space on smaller screens. */
+  }
+}
+
+@media (max-width: 768px) {
+  /* For screens with a maximum width of 768px (e.g., tablets) */
+  #menu-bar {
+    display: block; /* Displays the menu bar (likely a hamburger menu) for smaller screens. */
+  }
+
+  header .navbar {
+    position: absolute; /* Positions the navbar to overlay below the header. */
+    top: 100%; /* Moves the navbar below the header. */
+    left: 0; right: 0; /* Stretches the navbar horizontally. */
+    background: var(--black); /* Sets the navbar background color to black. */
+    padding: 1rem 0; /* Adds padding for better spacing. */
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* Hides the navbar by default with a clip-path. */
+  }
+
+  header .navbar.nav-toggle {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); /* Reveals the navbar when toggled. */
+  }
+
+  header .navbar a {
+    display: block; /* Stacks the navbar links vertically. */
+    background: #fff; /* Sets a white background for each link. */
+    border-radius: .5rem; /* Rounds the corners of the links. */
+    color: var(--black); /* Sets the text color to black. */
+    margin: 1.5rem; /* Adds spacing around each link. */
+    padding: 1rem 2rem; /* Adds padding for a larger clickable area. */
+    font-size: 2.5rem; /* Increases the font size for better readability. */
+  }
+
+  .home {
+    justify-content: center; /* Centers the home section content. */
+    background-position: left; /* Aligns the background to the left for better visuals. */
+  }
+
+  .home .content {
+    text-align: center; /* Centers the text content in the home section. */
+  }
+
+  .home .content span {
+    font-size: 2rem; /* Reduces the font size of spans in the content for smaller screens. */
+  }
+
+  .home .content h3 {
+    font-size: 4rem; /* Adjusts the font size of headings in the home section. */
+    width: auto; /* Ensures the heading width adjusts automatically. */
+  }
+
+  .clients .row {
+    flex-flow: column; /* Stacks the client boxes vertically. */
+  }
+
+  .clients .row .divider {
+    display: none; /* Hides dividers between client boxes on smaller screens. */
+  }
+
+  .clients .row .box-container:last-child .box {
+    display: flex;
+    flex-flow: column-reverse; /* Stacks the content in reverse order for the last client box. */
+  }
+
+  .contact form .inputBox input {
+    width: 100%; /* Makes the input fields take up the full width of the form. */
+  }
+}
+
+@media (max-width: 450px) {
+  /* For screens with a maximum width of 450px (e.g., smartphones) */
+  html {
+    font-size: 50%; /* Reduces the base font size further for very small screens. */
+  }
+}
+
+
+
+/*THIS CSS DESIGN IS FOR THE VIDEO BUTTON ON THE - OUR LATEST NOTES OF THE DAY HEADER-*/
+
+/* Styling for the video button */
+.video-button {
+  position: absolute;
+  bottom: 90px;  /* Adjusts the button's vertical position */
+  left: 50%;     /* Centers the button horizontally */
+  transform: translateX(-50%); /* Ensures the button is perfectly centered */
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.7);  /* Semi-transparent background */
+  color: white;
+  font-weight: bold;
+  border-radius: 25px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.video-button:hover {
+  background-color: rgba(0, 0, 0, 0.9);  /* Darkens on hover */
+}
+
+/* Make the button visible on image hover */
+.box {
+  position: relative;
+  overflow: hidden;
+}
+
+.box:hover .video-button {
+  opacity: 1;  /* Makes the button appear */
+  transform: translateX(-50%) translateY(-10px);  /* Slightly moves the button up */
+}
+
+/* Optional: Style for the image container */
+.box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.box:hover img {
+  transform: scale(1.2);
+}
+
+/*THIS CSS DESIGN IS FOR THE VIDEO BUTTON ON THE - OUR LATEST NOTES OF THE DAY HEADER-*/

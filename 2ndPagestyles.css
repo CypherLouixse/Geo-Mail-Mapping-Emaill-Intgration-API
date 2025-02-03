@@ -1,0 +1,123 @@
+/* Global styles for the page */
+body {
+  font-family: Arial, sans-serif;             /* Sets the font to Arial, with a fallback to sans-serif if Arial is not available */
+  margin: 0;                                 /* Removes any default margin around the body */
+  padding: 0;                               /* Removes any default padding around the body */
+  display: flex;                           /* Uses Flexbox to allow flexible layout of child elements */
+  flex-direction: column;                  /* Arranges child elements in a vertical column layout */
+  align-items: center;                    /* Aligns child elements horizontally in the center */
+  height: 100vh;                         /* Makes the body take up the entire height of the viewport */
+  background-image: url(https://images.pexels.com/photos/13823339/pexels-photo-13823339.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load); /* Sets a background image */
+  background-size: cover;                     /* Ensures the background image covers the entire page */
+  background-repeat: no-repeat;              /* Prevents the background image from repeating */
+  background-position: center;              /* Centers the background image */
+}
+
+/* Styles for the header (h1) */
+h1 {
+  margin: 20px 0;                                /* Adds 20px margin at the top and bottom of the header */
+  font-size: 1.8rem;                            /* Sets the font size for the header */
+  text-align: center;                          /* Centers the header text horizontally */
+  color: #ffffff;                           /* Sets the text color to a light gray */
+  font-family: Verdana, Geneva, Tahoma, sans-serif; /* Sets the font to a sans-serif family */
+  text-shadow: 0 0 20px #000000; /* Adds a glowing shadow effect behind the text. */
+}
+
+/* Ensure the map container is responsive */
+#map {
+  width: 100%;                               /* Makes the map container take up the full width of the page */
+  height: 100vh;                            /* Makes the map container take up the full height of the viewport */
+  max-width: 1000px;                       /* Restricts the map's width to a maximum of 1000px */
+  margin: 10px 0;                         /* Adds 10px margin on top and bottom */
+  border-radius: 25px;                   /* Rounds the corners of the map container */
+}
+
+/* Popup design */
+.leaflet-popup {
+  position: fixed;                                      /* Fixes the popup in place */
+  max-width: 300px;                                    /* Sets a maximum width for the popup */
+  padding: 10px;                                     /* Adds padding inside the popup */
+  font-family: Arial, sans-serif;                   /* Sets the font for the popup */
+  font-size: 14px;                                 /* Sets the font size for the popup content */
+  background-color: rgba(255, 255, 255, 0.8);   /* Gives the popup a semi-transparent white background */
+  border-radius: 10px;                                 /* Rounds the corners of the popup */
+  border: 2px solid rgba(0, 0, 0, 0.2);             /* Adds a soft border with low opacity */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);     /* Adds a shadow effect for a floating effect */
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out; /* Adds smooth transition effects when the popup is opened or closed */
+  margin-left: -20px;                               /* Adjusts the position of the popup for centering */
+}
+
+/* Popup open animation */
+.leaflet-popup-open {
+  transform: translateY(-100px);                   /* Moves the popup slightly upwards when opened */
+  opacity: 1;                                     /* Makes sure the popup is fully visible */
+}
+
+/* Hover effect for the popup */
+.leaflet-popup:hover {
+  transform: translateY(-15px);                        /* Moves the popup up when hovered */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);      /* Increases the shadow effect on hover */
+}
+
+/* Custom styling for the Leaflet zoom control buttons */
+.leaflet-control-zoom a {
+  background-color: #ffffff;                          /* Sets the background color of the zoom buttons to white */
+  color: #333;                                       /* Sets the text color to dark gray */
+  border: 2px solid #ddd;                           /* Adds a light gray border around the buttons */
+  border-radius: 20%;                                /* Makes the buttons circular */
+  width: 40px;                                      /* Sets the width of the zoom buttons */
+  height: 40px;                                         /* Sets the height of the zoom buttons */
+  line-height: 36px;                                   /* Centers the text vertically within the button */
+  text-align: center;                                 /* Centers the text horizontally within the button */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);        /* Adds a shadow effect to give depth */
+  font-size: 18px;                                  /* Sets the font size for the zoom icons */
+  transition: transform 0.2s ease, background-color 0.2s ease; /* Adds smooth transitions for hover and click effects */
+}
+
+/* Add hover effect */
+.leaflet-control-zoom a:hover {
+  background-color: #c4c4c4;                    /* Changes the background color to a slightly darker gray on hover */
+  transform: scale(1.1);                         /* Slightly enlarges the zoom button on hover */
+}
+
+/* Add active (clicked) effect */
+.leaflet-control-zoom a:active {
+  background-color: #e4e4e4;                /* Changes the background color to an even darker gray when clicked */
+  transform: scale(0.95);                    /* Slightly shrinks the zoom button on click */
+}
+
+/* Position the zoom control container */
+.leaflet-control-zoom {
+  border-radius: 10px;                        /* Rounds the corners of the zoom control container */
+  overflow: hidden;                          /* Ensures that the buttons stay within the bounds of the container */
+}
+
+/* FONT AND STYLES OF COORDINATES LONGITUDE - LATITUDE - LOCATION */
+/* Styling for popup content */
+.popup-content {
+  font-family: 'Arial', sans-serif;         /* Sets the font for the popup content */
+  font-size: 14px;                         /* Sets the font size for the popup content */
+  color: #333;                          /* Sets the text color to dark gray */
+}
+
+/* Styling specifically for the coordinates */
+.popup-content .coordinates {
+  font-family: 'Courier New', monospace;    /* Uses a monospace font for coordinates */
+  font-size: 14px;                         /* Sets the font size for coordinates */
+  color: #007BFF;                       /* Sets the color of the coordinates to blue */
+}
+
+/* Styling for the location */
+.popup-content .location {
+  font-family: 'Courier New', monospace;    /* Uses a monospace font for location text */
+  font-size: 14px;                         /* Sets the font size for the location */
+  color: #28a745;                       /* Sets the color of the location to green */
+}
+
+/* Styling for the 'where' label in popup content */
+.popup-content .where {
+  font-family: Arial, Helvetica, sans-serif;      /* Sets a sans-serif font for the label */
+  font-weight: bold;                             /* Makes the label text bold */
+  font-size: 17px;                              /* Sets a slightly larger font size for the label */
+  color: #0a0a0a;                            /* Sets the color of the label text to dark gray */
+}

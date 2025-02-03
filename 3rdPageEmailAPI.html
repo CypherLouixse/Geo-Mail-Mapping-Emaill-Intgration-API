@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+ <!-- 🎉 JAVASCRIPT CODE FOR CONTACT FORM CONFETTIS 🎉-->
+
+ <!-- 🎉 WHAT DOES THIS CODE DO?
+   🎯This script adds a confetti effect when the webpage loads 
+   using the Canvas-Confetti library. 🎊
+   
+   🎯Effects applied once the user visit the Third Page (3rdPageEmailAPI.html)
+   🎯Once the user enters the page, The confetti effects will pop-up 
+   on the user's screen, 
+   🎯 It also serves as Welcome signal for the users
+
+-->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script> <!-- Adds the Canvas-Confetti library to create confetti effects -->
+
+<script>
+  // Trigger confetti on page load
+  window.onload = function () {       // Executes the function when the page finishes loading
+    // Create a burst of confetti
+    confetti({ 
+      particleCount: 100,            // Specifies the number of confetti particles
+      spread: 70,                   // Determines the spread angle of the confetti
+      origin: { x: 0.5, y: 0 },    // Defines the starting position of the confetti (center-top of the screen)
+    });
+
+    // Gradually release more confetti
+    setTimeout(() => {          // Delays the execution of the following confetti effects by 500ms
+      confetti({
+        particleCount: 150,    // Number of confetti particles for the left-side burst
+        spread: 120,         // Wider spread angle for the left-side confetti
+        origin: { x: 0.2, y: 0.1 }, // Left-side starting position for the confetti
+      });
+
+      confetti({
+        particleCount: 150,            // Number of confetti particles for the right-side burst
+        spread: 120,                 // Wider spread angle for the right-side confetti
+        origin: { x: 0.8, y: 0.1 }, // Right-side starting position for the confetti
+      });
+    }, 500); // Sets a delay of 500 milliseconds before executing the additional confetti effects
+  };
+</script>
+
+<!-- 🎉 JAVASCRIPT CODE FOR CONTACT FORM CONFETTIS 🎉 -->
+
+
+
+
+
+  <head>
+    <link rel="icon" type="image/x-icon" href="https://cdn2.iconfinder.com/data/icons/popicon-part-4/256/3-256.png">
+    
+    <!--RESPONSIVE HEADER EMAIL API-->
+    <!-- Each letter is wrapped in a <span> and given a custom CSS variable (--order) to control animation delay -->
+    <header>
+      <span style="--order: 0">H</span>
+      <span style="--order: 1">e</span>
+      <span style="--order: 2">l</span>
+      <span style="--order: 3">l</span>
+      <span style="--order: 4">o</span>
+      <span style="--order: 5">,</span><br>
+      <span style="--order: 6">H</span>
+      <span style="--order: 7">o</span>
+      <span style="--order: 8">w</span>
+      <span style="--order: 9"> </span>
+      <span style="--order: 10">m</span>
+      <span style="--order: 11">a</span>
+      <span style="--order: 12">y</span>
+      <span style="--order: 13"> </span>
+      <span style="--order: 14">I</span>
+      <span style="--order: 15"> </span>
+      <span style="--order: 16">h</span>
+      <span style="--order: 17">e</span>
+      <span style="--order: 18">l</span>
+      <span style="--order: 19">p</span>
+      <span style="--order: 20"> </span>
+      <span style="--order: 21">y</span>
+      <span style="--order: 22">o</span>
+      <span style="--order: 23">u</span>
+      <span style="--order: 24">?</span>
+    </header>
+    
+
+
+    <!--RESPONSIVE HEADER EMAIL API-->
+
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Help Service</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+      />
+    <script src="3rdPageEmailAPI.js"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("xZClY-4sHuRB1MSdB");
+      })();
+    </script>
+
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        background-image: url('https://images.unsplash.com/photo-1479030160180-b1860951d696?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        background-size: cover;               /* Makes the image cover the entire background */
+        background-repeat: no-repeat;        /* Prevents the image from repeating */
+        background-attachment: fixed;       /* Keeps the background fixed during scrolling */
+        background-position: center;       /* Centers the image */
+         
+      }
+
+     /*DESIGNS & EFFECTS FOR CONTAINER BOX*/
+
+/* General container styles */
+.container {
+  background-color: #c7c7c7;                     /* Sets the container's background color to white */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);     /* Adds a subtle shadow for a card-like effect */
+  border-radius: 25px;                           /* Rounds the corners of the container with a 25px radius */
+}
+
+/* Styles for the row within the container */
+.row {
+  border-radius: 8px;                         /* Adds slightly rounded corners to the row */
+  overflow: hidden; 
+                           /* Ensures any overflowing content is hidden (useful for rounded corners) */
+}
+
+/* Styles for each column */
+.col-md-6 {
+  padding: 50px;                          /* Adds 50px of padding inside each column for spacing */
+}
+
+/* Background styling for the left section of the container */
+.bg-primary {
+  background-image: url('https://images.unsplash.com/photo-1694928850410-b209896782a2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')!important; /* Adds the GIF as the background */
+  background-size: cover;                      /* Ensures the GIF covers the entire area */
+  background-repeat: no-repeat;               /* Prevents the GIF from repeating */
+  background-position: center;               /* Centers the GIF in the section */
+  border-top-left-radius: 45px;             /* Rounds the top-left corner */
+  border-bottom-left-radius: 8px;          /* Rounds the bottom-left corner */
+   
+}
+
+
+/*DESIGN FOR OTHER CONTAINER BOX WITH GOOGLE MAPS BACKGROUND*/
+/* Heading (h1) styling inside the .bg-primary section */
+.bg-primary h1 {
+  font-size: 2.5rem;                      /* Sets the font size to 2.5 rem for large text */
+  margin-bottom: 20px;                   /* Adds space below the heading */
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;                 /* Applies a cursive font for a decorative style */
+}
+
+/*DESIGN FOR OTHER CONTAINER BOX WITH GOOGLE MAPS BACKGROUND*/
+/* Subheading (h4) styling inside the .bg-primary section */
+.bg-primary h4 {
+  font-size: 1.25rem;                 /* Sets the font size to 1.25 rem for smaller text */
+  margin-bottom: 30px;               /* Adds space below the subheading */
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;            /* Applies a cursive font for consistency */
+}
+
+/* Styling for labels (h5) inside the form group */
+.form-group h5 {
+  color: #333;              /* Sets the text color to a dark gray for readability */
+  font-weight: 600;          /* Makes the font slightly bold */
+}
+
+/* Styles for the input and textarea fields */
+.form-control {
+  border-radius: 5px;                /* Adds rounded corners with a 5px radius */
+  border: 1px solid #ced4da;      /* Sets a light gray border */
+  box-shadow: none;                /* Removes any default shadow applied by the browser */
+  padding: 10px;                  /* Adds 10px padding inside the input for better usability */
+  font-size: 1rem;               /* Sets the font size to 1 rem for readability */
+  border-radius: 35px;          /* Rounds the corners of the form control to create a pill shape */
+}
+
+/* Focus styles for the input and textarea fields */
+.form-control:focus {
+  border-color: #c9a91a;                               /* Changes the border color to blue when focused */
+  box-shadow: 0 0 0 0.25rem rgba(192, 180, 8, 0.5);   /* Adds a blue glow effect around the field */
+  border-radius: 25px;                                  /* Adjusts the corner radius for focus to ensure a consistent look */
+}
+
+/*DESIGNS & EFFECTS FOR CONTAINER BOX*/
+
+
+
+      /*DESIGNS & EFFECTS FOR WHITE CONTAINER BOX */
+
+/* Styles for the main container of the form */
+.form-container {
+  padding: 60px;                     /* Adds 60px of padding inside the container to create space around the content */
+}
+
+/* Styles for the right column of the layout with a border on the left */
+.col-md-6.border-left {
+  background-color: white   ;      /* Sets a light gray background color for the column */
+  border-left: 2px solid #f3f3f3;    /* Adds a solid border of 2px thickness on the left side with a lighter gray color */
+  padding-bottom: 30rem;              /* Adds 30 rem (relative to root font size) of padding to the bottom for vertical spacing */
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Responsive styles for devices with a maximum width of 768px (e.g., tablets, small screens) */
+@media (max-width: 768px) {
+  .col-md-6 {
+    padding: 30px;                /* Reduces the padding inside the column to 30px for smaller screens to save space */
+  }
+
+  .bg-primary h1 {
+    font-size: 2rem;           /* Adjusts the font size of <h1> elements inside .bg-primary to 2 rem for smaller screens */
+    
+    }
+
+  .bg-primary h4 {
+    font-size: 1rem;         /* Adjusts the font size of <h4> elements inside .bg-primary to 1 rem for smaller screens */
+  }
+}
+
+/*DESIGNS & EFFECTS FOR WHITE CONTAINER BOX*/
+
+    
+      /*SUBMIT BUTTON EFFECTS*/
+ 
+  button.btn {
+  font-size: 1rem;                             /* Adjust font size */
+  font-weight: bold;                          /* Make the font bold */
+  padding: 10px 30px;                        /* Horizontal padding increased to make button wider */
+  border: none;                             /* Remove border */
+  border-radius: 25px;                          /* Rounded corners */
+  cursor: pointer;                             /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for color change and scaling */
+  display: block;                            /* Make the button a block element */
+  margin: 0 auto;                           /* Center the button horizontally */
+  min-width: 450px;                        /* Minimum width for the button */
+}
+
+/* Default style for btn-primary */
+  button.btn-primary {
+  background-color: #a88b0a;        /* Default blue background */
+  color: #fff;                       /* Default white text color */
+}
+
+/* Customizable styles (you can change these values to change the button's look) */
+  button.btn-primary:hover {
+  background-color:  #d6b004;  /* Darker blue when hovered */
+  transform: scale(1.05);      /* Slightly enlarges the button on hover */
+}
+
+
+  /* Optional: Add focus styles */
+    button.btn:focus {
+    outline: none;                                   /* Removes default outline */
+    box-shadow: 0 0 5px rgba(211, 207, 7, 0.829);  /* Adds a custom focus shadow */
+  }
+
+    /*SUBMIT BUTTON EFFECTS*/
+ 
+
+
+  
+
+  </style>
+</head>
+<body>
+  <div class="container border mt-5 p-0">                               <!-- Main container for the entire section -->
+    <div class="row">                                                   <!-- Defines the layout using Bootstrap's grid system -->
+      <div class="col-md-6 p-5 bg-primary text-white">                  <!-- Left column: Content for welcoming customers -->
+        <h1>Hi our Dearest Customers!, how's the Application?</h1>         <!-- Main heading welcoming customers -->
+        <h4>We would love to Thank you for using our Application.</h4>     <!-- Secondary text to thank users -->
+
+        <br><br>                                                        <!-- Adds vertical spacing between content -->
+        <h4>                                                            <!-- Message asking if the user has concerns -->
+          do you have any concerns?<br><p>Please send us an email</p>
+        </h4>
+
+      </div>  <!-- End of left column -->
+
+      <div class="col-md-6 border-left py-3 form-container">            <!-- Right column: Contact form -->
+        <h1>Contact Form</h1>                                           <!-- Title of the contact form -->
+        <div class="form-group">                                        <!-- Form field for the user's name -->
+          <h5 for="name">Name</h5>                                      <!-- Label for the name input -->
+          <input type="text" class="form-control" id="name" placeholder="Enter name" />  <!-- Text input for the user's name -->
+        </div>
+        <div class="form-group">                                  <!-- Form field for the user's email -->
+          <h5 for="email">Email</h5>                              <!-- Label for the email input -->
+          <input type="email" class="form-control" id="email" placeholder="Enter email" /> <!-- Email input for the user's email address -->
+        </div>
+        <div class="form-group">                                  <!-- Form field for the user's message -->
+          <h5 for="message">Message</h5>                          <!-- Label for the message textarea -->
+          <textarea class="form-control" id="message" rows="4"></textarea>      <!-- Textarea for entering a message, with 4 rows of text -->
+        </div>
+        <button class="btn btn-primary" onclick="sendMail()">Submit</button>     <!-- Button to submit the form, calls `sendMail()` -->
+      </div>                                 <!-- End of right column -->
+    </div>                                    <!-- End of row -->
+  </div>                                      <!-- End of container -->
+</body>
+</html>
+
+
+
+
+<!-- HOME BUTTON DESIGNS -->
+<a href="index.html" class="home-btn">
+  <img src="https://cdn-icons-png.flaticon.com/512/1946/1946433.png" alt="Home Icon" style="width: 20px; height: 20px; margin-right: 8px; vertical-align: middle;"/> Home
+</a> <!-- Creates a clickable "HOME" button that links to the index.html page -->
+
+<style>
+  /* Style for Home Button */
+  .home-btn {
+    position: absolute; /* Positions the button relative to its closest positioned ancestor or the page */
+    top: 35px; /* Moves the button 30px from the top of the page */
+    left: 5rem; /* Moves the button 5rem from the left side of the page */
+    background-color: #04ada5; /* Sets the button's background color */
+    color: rgb(255, 255, 255); /* Sets the button's text color to white */
+    padding: 10px 20px; /* Adds 10px vertical and 20px horizontal padding inside the button */
+    border-radius: 25px; /* Rounds the corners of the button to make it pill-shaped */
+    text-decoration: none !important; /* Ensures there is no underline on the button text */
+    font-size: 1rem; /* Sets the font size of the button text to 1 rem */
+    font-weight: bold; /* Makes the button text bold */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Sets a modern sans-serif font for the button text */
+    margin-left: 10px; /* Adds extra spacing to the left of the button */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+  }
+
+  /* Hover effect for the Home Button */
+  .home-btn:hover {
+    background-color: #02bbb2e0; /* Changes the button's background color when hovered */
+    color: rgb(255, 255, 255); /* Changes the text color to black when hovered */
+    transform: scale(1.05); /* Slightly enlarges the button on hover */
+  }
+
+  /* Focus effect for the Home Button */
+  .home-btn:focus {
+    outline: none; /* Removes the default outline */
+    box-shadow: 0 0 5px rgba(211, 207, 7, 0.829); /* Adds a custom focus shadow */
+  }
+
+  /*-- HOME BUTTON DESIGNS --*/
+
+
+
+
+
+
+
+
+  /*--RESPONSIVE HEADER EMAIL API--*/
+
+  /* Header container styles */
+  header {
+  font-size: 35px;        /* Set font size for the entire header */
+  font-weight: bolder;        /* Make the text bold */
+  display: flex;              /* Use flexbox to align content */
+  justify-content: center;       /* Horizontally center content */
+  align-items: center;               /* Vertically center content */
+  text-align: center;                    /* Center-align the text inside the header */
+  color: #f8f8f8;                          /* Set text color to a light gray */
+  box-sizing: border-box;                    /* Include padding and border in element's total width/height */
+  /*background-color: ;   */            /* Semi-transparent background for the header */
+  border-radius: 60px;                     /* Add rounded corners to the header */
+  margin-top: -10px;                       /* Add space above the header */
+  margin-left: 15rem;                    /* Add space on the left side of the header */
+  margin-right: 15rem;                  /* Add space on the right side of the header */
+  padding-top: 20px;                    /* Add padding at the top of the header */
+  padding-bottom: 5px;               /* Add padding at the bottom of the header */
+}
+
+/* Letter styles */
+header span {
+  display: inline-block;              /* Treat each letter as a block element for better positioning */
+  margin-top: 20px;                   /* Add space above each letter */
+  animation: hoverEffect 2s ease-in-out infinite;      /* Apply an animation that loops infinitely */
+  animation-delay: calc(var(--order) * 0.2s);         /* Stagger the animation based on the letter's order */
+  letter-spacing: 10px;                              /* Add space between letters */
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Keyframe animation for hover effect */
+@keyframes hoverEffect {
+  0%, 100% { 
+    /* At the start and end of the animation */
+    transform: translateY(0);                /* Keep the letter in its default position */
+    color: #f8f8f8;                       /* Keep the original color */
+  }
+  50% { 
+    /* At the midpoint of the animation */
+    transform: translateY(-10px);       /* Move the letter 10px upwards */
+    color: #d3c500;                  /* Change the color to blue */
+  }
+}
+
+
+  /*--RESPONSIVE HEADER EMAIL API--*/
+  
+</style>
+ 

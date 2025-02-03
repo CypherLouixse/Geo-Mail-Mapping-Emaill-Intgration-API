@@ -1,0 +1,378 @@
+﻿
+<!-- TITLE OF THIS PROJECT " "GeoMail: A Comprehensive Solution for Mapping and Email Integration in Location-Based Services""-->
+
+<!--TWO (2) MAIN API's USED FOR THIS APPLICATION-->
+
+<!-- 1. OpenStreetMap API(With Nominatim for GeoLocation)
+Description:  users can search for locations, retrieve detailed 
+geographical information, and visualize mapped locations-->
+
+<!-- 2. EmailJS API
+Description: API allows users to send emails directly from the application, 
+eliminating the need for traditional email clients or backend mail servers.-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <!-- ICON LINK FOR TAB -->
+    <link rel="icon" type="image/x-icon" href="https://cdn1.iconfinder.com/data/icons/maps-and-navigation-filled-outline/120/paper_map_road_map_map_direction_map_navigation_1ldpi-256.png">
+    <!-- ICON LINK FOR TAB -->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Yourself Now !</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="1stPageMainPageAPI.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header>
+    <!-- Header section, typically for the website navigation bar and logo -->
+
+    <div class="image" id="img">
+        <!-- Image container for an icon or logo -->
+        <img src="https://cdn4.iconfinder.com/data/icons/general13/png/256/world.png">
+        <!-- Image representing the world, likely as a symbol of global reach or location -->
+    </div>
+
+    <!-- Logo link that directs the user to the home section of the website -->
+    <a href="#home" class="logo">HOME</a>
+
+    <!-- Menu bar icon, usually visible on mobile devices, to open/close the menu -->
+    <div id="menu-bar" class="fas fa-bars"></div>
+
+    <!-- Navigation bar with links to various sections of the website -->
+    <nav class="navbar">
+        <!-- Link to the 'vendor' section with an onclick event to redirect (potentially custom function) -->
+        <a href="#vendor" onclick="redirectHome(event)"> VIEWFINDS    |</a>  
+        
+        <!-- Link to the 'clients' section, again with a custom redirect function -->
+        <a href="#clients" onclick="redirectHome(event)"> ANNOUNCEMENTS     |</a>
+        
+        <!-- Link to the 'vendor' section for the help service page -->
+        <a href="#vendor" onclick="redirectHome(event)"> HELP service   |</a>
+        
+        <!-- Link to the 'team' section for information about the developers -->
+        <a href="#team" onclick="redirectHome(event)"> DEVS</a>
+        </nav>
+ 
+
+
+    <!--THIS JAVASCRIPT LINE OF CODES USED FOR HANDLING NAVIGATION
+    AND REDIRECTION WITHIN A SINGLE-PAGE-->
+
+    <!--🚀 WHAT IS THIS USED FOR?
+    🎯 Prevents broken or unwanted deep links
+    🎯 Ensures users always start at #home if they open the page from certain sections
+    🎯 Helps with smoother navigation in a single-page web application
+
+    🎯 If a user reloads the page while on #vendor( ViewFinds |), 
+        #clients( Announcements|), #vendor( HELP Service |),
+        #team( Devs |)  this script automatically 
+        redirects them back to #home to maintain consistency.-->
+
+
+      <script>
+        function redirectHome(event) {
+          // Prevent the default link behavior
+          event.preventDefault();
+          
+          // Change the window's hash to #home before the page is reloaded
+          /*window.location.hash = " ";*/
+          
+          // Allow the browser to navigate to the hash once it's updated
+          setTimeout(() => {
+            window.location.hash = event.target.getAttribute('href').substring(1);
+          }, 300); // Wait for the hash update before navigating
+        }
+      
+        window.addEventListener("load", function() {
+          // Ensure the page always loads to #home if it’s the vendor or other sections
+          if (window.location.hash === "#vendor" || window.location.hash === "#clients" || window.location.hash === "#team") {
+            window.location.hash = "#home";
+          }
+        });
+      </script>
+      
+   <!--THIS JAVASCRIPT LINE OF CODES USED FOR HANDLING NAVIGATION
+    AND REDIRECTION WITHIN A SINGLE-PAGE-->
+
+
+
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+    <!-- The 'home' section where users are introduced to the website's main function -->
+    <div class="content">
+        <h3>LOCATE YOURSELF INSTANTLY USING OUR WEBSITE</h3> <!-- Main heading that invites the user to locate themselves -->
+        <span>   Always Nearby, Never been Far!</span> <!-- A subheading that adds emphasis to the proximity aspect -->
+    </div>
+</section>
+<!-- home section ends -->
+
+<!-- Adding spacing with <br> for visual separation of sections -->
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
+
+<!-- vendor section starts, showcasing locations or services the user can explore -->
+<section class="vendor" id="vendor">
+    <div class="heading">
+        <h1> WHERE TO FIND YOURSELF</h1> <!-- Heading for the vendor section, inviting users to explore where they can find services or locations -->
+        <div class="heading1">
+            <div class="imahe" id="img">
+                <!-- Image/icon next to the heading to visually represent location -->
+                <img src="https://cdn2.iconfinder.com/data/icons/frosted-glass/256/Location.png">
+            </div>
+        </div>
+    </div>
+
+    <!-- Box container that holds various services or locations -->
+    <div class="box-container">
+
+        <!-- First box showcasing a map location -->
+        <div class="box">
+            <img src="https://images.pexels.com/photos/13823339/pexels-photo-13823339.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="">
+            <div class="info">
+                <h3>MAP LOCATION</h3> <!-- Subheading describing the service -->
+                <p>Want to know your Exact location?</p> <!-- Brief description -->
+                <nav class="navbar">
+                    <a href="2ndPageindex.html" class="btn">See Current Location</a> <!-- Button that links to a page (Bags.html) for showing the current location -->
+                </nav>
+            </div>
+        </div>
+
+        <!-- Second box showcasing a help service -->
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1694928850410-b209896782a2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            <div class="info">
+                <h3>HELP SERVICE</h3> <!-- Heading for the help service -->
+                <p>We'll get to you asap.</p> <!-- Short message about the service's responsiveness -->
+                <nav class="navbar">
+                    <a href="3rdPageEmailAPI.html" class="btn">ASK HELP</a> <!-- Button linking to a page (Clothes.html) where users can request help -->
+                </nav>
+            </div>
+        </div>
+ 
+
+    </div>
+</section>
+<!-- vendor section ends -->
+
+
+<!-- vendor section ends -->
+
+<!-- client section starts  -->
+
+ <!--THIS HTML SECTION LINE CODES IS RELATED OF THE CSS DESIGN FOR VIDEO LINKS--> 
+
+<!-- Clients Section -->
+<section class="clients" id="clients">
+    <!-- This section displays the main heading for the "Notes of the Day" -->
+    <div class="heading">
+        <h1>OUR LATEST NOTES OF THE DAY</h1>
+        
+        <!-- Additional heading with an image to represent notifications -->
+        <div class="heading1">
+            <div class="imahe" id="img">
+                <!-- Notification icon image -->
+                <img src="https://cdn2.iconfinder.com/data/icons/frosted-glass/256/Notification.png">
+            </div>
+        </div>
+    </div>
+
+    <!-- Row that contains multiple content boxes -->
+    <div class="row">
+        <!-- Box container for video links -->
+        <div class="box-container">
+            <!-- First box with image, title, and video link -->
+            <div class="box">
+                <!-- Image related to the first note -->
+                <img src="https://images.unsplash.com/photo-1586986572014-8261434379cf?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+
+                <!-- Information section with a title for the note -->
+                <div class="info">
+                    <h3>2. Maps For Navigation</h3>
+                </div>
+
+                <!-- Button linking to the related YouTube video -->
+                <a href="https://www.youtube.com/watch?v=mR2CWUOSC08" class="video-button" target="_blank">Watch Video</a>
+            </div>
+
+            <!-- Second box with image, title, and video link -->
+            <div class="box">
+                <!-- Image related to the second note -->
+                <img src="https://images.unsplash.com/photo-1551976701-fe64fa693864?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+
+                <!-- Information section with a title for the note -->
+                <div class="info">
+                    <h3>3. Maps For History</h3>
+                </div>
+
+                <!-- Button linking to the related YouTube video -->
+                <a href="https://www.youtube.com/watch?v=vIoUTrSWvEE" class="video-button" target="_blank">Watch Video</a>
+            </div>
+        </div>
+
+        <!-- Divider (Empty image) to separate sections visually -->
+        <img src=" " class="divider" alt="">
+
+        <!-- Another box container for more notes -->
+        <div class="box-container">
+            <!-- Third box with image, title, and information link -->
+            <div class="box">
+                <div class="info">
+                    <h3>1. Maps for your everyday Transportation!</h3>
+                </div>
+
+                <!-- Image related to the third note -->
+                <img src="https://theexplorerschannel.com/wp-content/uploads/2023/05/DSCF6073-copy.jpg" alt="">
+
+                <!-- Link for further information about the note -->
+                <a href="https://mapsplatform.google.com/resources/blog/reimagining-ride-hailing-services-google-maps-platform/#:~:text=With%20the%20On%2Ddemand%20Rides%20and%20Deliveries%20Solution%2C%20riders%20can,Maps%20Platform%2C%20visit%20our%20website." class="video-button" target="_blank">Visit Information</a>
+            </div>
+
+            <!-- Fourth box with image, title, and information link -->
+            <div class="box">
+                <div class="info">
+                    <h3>4. Maps for the World</h3>
+                </div>
+
+                <!-- Image related to the fourth note -->
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+
+                <!-- Link for further information about the note -->
+                <a href="https://education.nationalgeographic.org/resource/map/" class="video-button" target="_blank">Visit Information</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="team" id="team">
+    <!-- Section heading for the team -->
+    <div class="heading1">
+        <h1>THE TEAM BEHIND THE SOFAPP </h1>
+
+        <!-- Image representing the team -->
+        <div class="imahe" id="img">
+            <img src="https://cdn2.iconfinder.com/data/icons/marketing-and-management-hexagone/128/5-512.png">
+        </div>
+    </div>
+
+    <!-- Box container for team member profiles -->
+    <div class="box-container">
+        <!-- Profile for CEO 1 -->
+        <div class="box">
+            <!-- CEO image -->
+            <img src="https://scontent.fmnl9-3.fna.fbcdn.net/v/t1.15752-9/474083773_578464118494246_4812261148343093147_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeFkMq7sX83__zJGUiYb0YPi3ZUJgFcu-h_dlQmAVy76HxrlydxXfK8U9BfOJvvRLCHWo333sMRKgH0sEgIMSICl&_nc_ohc=s9k7coo8CAkQ7kNvgEbI3Ls&_nc_zt=23&_nc_ht=scontent.fmnl9-3.fna&oh=03_Q7cD1gFaVRb5zskyvtJ8icd3WNhng_UPZnAJKJubpiVtcyoJIw&oe=67B6F711" alt="CEO 3">
+
+            <!-- CEO name and title -->
+            <h3>Althea J. Gaspar</h3>
+            <span>CEO - SUPPORTING DEV</span>
+
+            <!-- Social media share links -->
+            <div class="share">
+                <!-- Facebook link -->
+                <a href="3rdPageEmailAPI.html" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/128/16509/16509529.png" />
+                </a>
+
+                 
+
+               
+
+               
+            </div>
+        </div>
+
+        <!-- Profile for CEO 2 -->
+        <div class="box">
+            <img src="https://scontent.fmnl9-2.fna.fbcdn.net/v/t1.15752-9/473068350_604185952243043_1621689777408890796_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEm9CdZbcRa_BiNbue3aUPA4l4vN23CocXiXi83bcKhxcm_kvyxD5cj8LqP6jGmNZF66gsg7w0W02UEFnsqPF3U&_nc_ohc=vhCW7Ie9Y6oQ7kNvgGCO5Dn&_nc_zt=23&_nc_ht=scontent.fmnl9-2.fna&oh=03_Q7cD1gELjb-h8hK9IDWBjDmw4E_n5o9nzZJsuW3-IMlGqB68gw&oe=67B6E153" alt="CEO 2">
+            <h3>Jerimie J. Parungao</h3>
+            <span>CEO - MAIN DEV</span>
+            <div class="share">
+                <!-- Facebook link -->
+                <a href="3rdPageEmailAPI.html" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/128/16509/16509529.png" />
+                </a>
+                <!-- Instagram link -->
+                
+            </div>
+        </div>
+
+        <!-- Profile for CEO 3 -->
+        <div class="box">
+            <img src="https://scontent.fmnl9-1.fna.fbcdn.net/v/t1.15752-9/473279319_1168527678129108_8375435813649586349_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeHACLrpM2jgCFaYIdQoAbGuooUcN1ZuNoKihRw3Vm42gvTotgRNjq-DDVa1Q6A9_lchRC_cfMzqUde7lfGlAEbI&_nc_ohc=oMzeAqMd2DsQ7kNvgEG-TdW&_nc_zt=23&_nc_ht=scontent.fmnl9-1.fna&oh=03_Q7cD1gEpYTqY3RVXH_4LVb-6-TFPHjKAX_aLIe8oj5r3rg827g&oe=67B702ED" alt="CEO 3">  
+            <h3>Cristina Loi G. Manilag</h3>
+            <span>CEO - SUPPORTING OWNER</span>
+            <div class="share">
+                <!-- Facebook link -->
+                <a href="3rdPageEmailAPI.html" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/128/16509/16509529.png" />
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+ 
+ 
+
+
+<!--THIS JAVASCRIPT LINE OF CODES IS USED FOR MOBILE DEVICES - SO THIS APPLICATION WILL BE MOBILE-FRIENDLY-->
+
+<!--How It Works on Mobile:-->
+<!--📱 When a user clicks the hamburger menu (☰), the navigation bar appears.
+❌ When they click again, it turns into a close (X) icon and hides the menu.
+⬆️ If the user scrolls, the menu automatically closes to keep the screen clear.-->
+
+<script> 
+
+    // Selecting the menu bar and navbar elements using querySelector
+    let menu = document.querySelector('#menu-bar'); // The menu button with id "menu-bar" (hamburger icon or close icon)
+    let navbar = document.querySelector('.navbar'); // The navbar with class "navbar" that will be shown/hidden
+
+    // Adding an event listener for the 'click' event on the menu bar
+    menu.addEventListener('click', () => {
+        // Toggles the 'fa-times' class on the menu button, likely turning it into a "close" icon when clicked
+        // 'fa-times' is a Font Awesome class used for a close icon
+        menu.classList.toggle('fa-times');
+        
+        // Toggles the 'nav-toggle' class on the navbar to show or hide the navbar
+        // 'nav-toggle' is a class added to the navbar to make it visible when clicked (e.g., in mobile view)
+        navbar.classList.toggle('nav-toggle');
+    });
+
+    // This function triggers when the window is scrolled
+    window.onscroll = () => {
+        // Removes the 'fa-times' class from the menu button, reverting it to the "hamburger" icon
+        // This happens when the user scrolls, ensuring the icon changes back to the default hamburger style
+        menu.classList.remove('fa-times');
+        
+        // Removes the 'nav-toggle' class from the navbar to hide the navigation menu
+        // This ensures that when the user scrolls, the navbar (menu) will be hidden automatically
+        navbar.classList.remove('nav-toggle');
+    }
+
+</script>
+
+<!--THIS JAVASCRIPT LINE OF CODES IS USED FOR MOBILE DEVICES - SO THIS APPLICATION WILL BE MOBILE-FRIENDLY-->
+
+</body>
+</html>
