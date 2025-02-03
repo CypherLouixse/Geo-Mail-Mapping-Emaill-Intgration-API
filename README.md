@@ -87,7 +87,7 @@ sendEmail(emailData);
 
 ## 📸 Screenshots
 ### Map Page
-![Map Page Screenshot](screenshots/map-page.png)
+![Image](https://github.com/user-attachments/assets/b47e03c4-9067-4cb4-bdf7-35d717b37f94)
 
 ### Email Page
 ![Email Page Screenshot](screenshots/email-page.png)
