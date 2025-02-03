@@ -90,7 +90,7 @@ sendEmail(emailData);
 ![Image](https://github.com/user-attachments/assets/b47e03c4-9067-4cb4-bdf7-35d717b37f94)
 
 ### Email Page
-![Email Page Screenshot](screenshots/email-page.png)
+![Image](https://github.com/user-attachments/assets/41f7623e-e42b-49ba-9278-ab3ef71bd118)
 
 ## 🛠 Troubleshooting & Common Issues
 1. **API Not Responding**: Ensure you are connected to the internet and the API endpoints are correct.
