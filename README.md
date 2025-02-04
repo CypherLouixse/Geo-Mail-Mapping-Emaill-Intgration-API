@@ -14,7 +14,7 @@ Designed with **user-friendliness and responsiveness** in mind, this project ens
 
 ## 🚀 Features
 ✅ **OpenStreetMap Integration** – Displays an interactive map with user search capabilities.  
-✅ **Nominatim API for Geolocation** – Allows users to search for locations and retrieve coordinates.  
+✅ **Nominatim API for Geolocation** – Allows users to search for locations and retrieve coordinates from OpenStreetMap Data.  
 ✅ **Email API Integration** – Enables sending emails directly from the web application.  
 ✅ **User-Friendly Interface** – Provides an intuitive experience for navigation and interaction.  
 
