@@ -77,26 +77,67 @@ function handleLocationError(error) {
 
 
 // Initialize the map with a reference to the element with id 'map'
-const map = L.map('map');              // Creates a Leaflet map instance linked to the 'map' HTML element
-let currentSearchMarker = null;       // Variable to store the current search marker
-let userLocationMarker = null;       // Variable to store the user's location marker
+const map = L.map('map');              // 🎯 Creates a Leaflet map instance linked to the 'map' HTML element
+//🎯 The map will be displayed inside the element with this ID
+
+let currentSearchMarker = null;       //🎯 Variable to store the current search marker
+let userLocationMarker = null;       //🎯 Variable to store the user's current location marker
+//🎯They are set to null because no markers exist at the start
+
+
 
 // Function to convert decimal coordinates to Degrees, Minutes, Seconds (DMS) format
-function convertToDMS(decimal, isLatitude) {
+function convertToDMS(decimal, isLatitude) {  //🎯 This function converts decimal coordinates (latitude/longitude) into Degrees, Minutes, Seconds (DMS) format
+  //🎯It takes two parameters:
+ // (decimal) → The decimal coordinate value.
+ // (isLatitude) → A boolean (true for latitude, false for longitude).
+
+
+  
   const absolute = Math.abs(decimal);                      // Get absolute value of the decimal (latitude or longitude)
   const degrees = Math.floor(absolute);                   // Extract whole degrees from the decimal value
+
+  
   const minutesNotTruncated = (absolute - degrees) * 60;            // Convert fractional part to minutes
   const minutes = Math.floor(minutesNotTruncated);                 // Extract whole minutes
-  const seconds = ((minutesNotTruncated - minutes) * 60).toFixed(1); // Convert the remaining part to seconds
+  //🎯 The fractional part of the coordinate is converted into minutes
+  //🎯 It is calculated by subtracting the whole degrees, multiplying the remainder by 60, and extracting the whole number of minutes
 
+  
+  const seconds = ((minutesNotTruncated - minutes) * 60).toFixed(1); // Convert the remaining part to seconds
+  //🎯The remaining fractional part of minutes is converted into seconds, rounded to one decimal place
+
+  
   // Determine the direction (N/S for latitude, E/W for longitude)
   const direction = isLatitude
     ? (decimal >= 0 ? 'N' : 'S')                      // For latitude: N for positive, S for negative
     : (decimal >= 0 ? 'E' : 'W');                    // For longitude: E for positive, W for negative
+ //🎯 The function determines the correct direction:
 
+  //🎯 Latitude (isLatitude is true):
+  // Positive → North (N)
+  // Negative → South (S)
+
+  //🎯 Longitude (isLatitude is false):
+  // Positive → East (E)
+  // Negative → West (W)
+
+  
   // Return the coordinates in DMS (Degrees, Minutes, Seconds) format as a string
   return `${degrees}&deg;${minutes}'${seconds}"${direction}`;
-}
+}  
+  //🎯 The final DMS format is constructed using:
+
+// Degrees → °
+// Minutes → '
+// Seconds → "
+// Direction → N, S, E, or W
+
+//🎯 Example Output: 
+// For Latitude - 37°46'29.6"N  
+// For Longitude - 122°25'9.8"W
+
+
 
 
 
