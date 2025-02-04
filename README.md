@@ -30,7 +30,7 @@ Designed with **user-friendliness and responsiveness** in mind, this project ens
 ### Prerequisites
 Ensure you have the following installed on your system:
 - A modern web browser (Chrome, Firefox, Edge, etc.)
-- A code editor (e.g., Visual Studio Code)
+- A code editor ( Visual Studio Code)
 - (Optional) Node.js if backend features are included
 
 ### Steps to Run Locally
